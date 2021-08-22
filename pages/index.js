@@ -1,23 +1,56 @@
 import Head from "next/head";
+import Navbar from "../components/navbar";
+import Project from "../components/project";
 
 export default function Home() {
   return (
-    <div className="p-4">
+    <div className="relative">
       <Head>
         <title>NFTs to mint | Tomint.art</title>
         <meta
           name="description"
-          content="The place where you can find active and upcoming NTFs to mint"
+          content="Find active and upcoming NTFs to mint."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="p-4">
-        <h1 className="text-5xl font-bold text-purple-500">Tomint.art </h1>
-        <p className="text-gray-700">
-          The place where you can find active and upcoming NTFs to mint. 🖼️
-        </p>
-      </main>
+      <img
+        className="absolute top-0 right-0 -z-10"
+        src="/bg.svg"
+        alt="background"
+      />
+      <div className="z-10 px-4 mx-auto lg:px-0 md:max-w-5xl">
+        <Navbar></Navbar>
+        <div className="py-12 md:py-24">
+          <h1 className="max-w-3xl text-3xl font-bold leading-tight md:text-6xl">
+            Find active and upcoming NTFs to mint
+          </h1>
+        </div>
+        <div className="space-y-1">
+          <p className="text-sm">Active</p>
+          <div className="space-y-3">
+            <Project
+              name="Crypto punks"
+              img="/images/punk.png"
+              items="10.0"
+              price="0.082"
+              date="21/08/2021"
+              website="https://www.larvalabs.com/cryptopunks"
+              communityLink="https://discord.com/invite/tQp4pSE"
+              twitter="https://twitter.com/larvalabs"
+            ></Project>
+            <Project
+              name="Cool Cats"
+              img="/images/coolcat.png"
+              items="9.9"
+              price="0.076"
+              date="22/08/2021"
+              website="https://www.coolcatsnft.com/"
+              communityLink="https://discord.com/invite/X6A4AXrKaR"
+              twitter="https://twitter.com/coolcatsnft"
+            ></Project>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
