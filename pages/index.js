@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Navbar from "../components/navbar";
 import Project from "../components/project";
+import getProjects from "../airtable/getProjects";
 
-export default function Home() {
+export default function Home({ projects }) {
+  console.log(projects);
   return (
     <div className="relative">
       <Head>
@@ -37,7 +39,7 @@ export default function Home() {
               website="https://www.larvalabs.com/cryptopunks"
               communityLink="https://discord.com/invite/tQp4pSE"
               twitter="https://twitter.com/larvalabs"
-            ></Project>
+            />
             <Project
               name="Cool Cats"
               img="/images/coolcat.png"
@@ -47,10 +49,42 @@ export default function Home() {
               website="https://www.coolcatsnft.com/"
               communityLink="https://discord.com/invite/X6A4AXrKaR"
               twitter="https://twitter.com/coolcatsnft"
-            ></Project>
+            />
+            {projects.map(
+              ({
+                id,
+                name,
+                total_mint_size,
+                mint_price,
+                mint_date,
+                link,
+                discord_link,
+                twitter_link,
+              }) => (
+                <Project
+                  key={id}
+                  name={name}
+                  img="/images/coolcat.png"
+                  items={total_mint_size}
+                  price={mint_price}
+                  date={mint_date}
+                  website={link}
+                  communityLink={discord_link}
+                  twitter={twitter_link}
+                />
+              )
+            )}
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      projects: await getProjects(),
+    },
+  };
 }
