@@ -14,13 +14,15 @@ const Project = ({
 }) => (
   <div className="flex flex-col justify-between p-4 space-y-3 border-2 border-teal-300 rounded-lg bg-teal-100/40 md:flex-row">
     <div className="flex space-x-6">
-      <Image
-        className="bg-gray-200 rounded-lg"
-        src={img}
-        alt={name}
-        width={84}
-        height={84}
-      />
+      {img && (
+        <Image
+          className="bg-gray-200 rounded-lg"
+          src={img}
+          alt={name}
+          width={84}
+          height={84}
+        />
+      )}
       <div className="flex flex-col justify-between">
         <h3 className="font-bold md:text-xl">{name}</h3>
         <div className="flex space-x-5 md:space-x-8">
