@@ -12,6 +12,9 @@ const fields = [
   "mint_date",
   "mint_date",
   "mint_date",
+  "discord_link",
+  "twitter_link",
+  "images",
 ];
 
 const buildRecords = (records) => {
@@ -24,7 +27,7 @@ const buildRecords = (records) => {
     const mint_date = record.get("mint_date");
     const discord_link = record.get("discord_link") || null;
     const twitter_link = record.get("twitter_link") || null;
-    const image = record.get("images")?.map((image) => image.url);
+    const image = record.get("images")?.map((image) => image.url)[0];
 
     return {
       id,
