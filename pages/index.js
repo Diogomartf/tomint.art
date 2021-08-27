@@ -6,6 +6,8 @@ import {
   getUpcomingProjects,
   getSoldOutProjects,
 } from "../airtable/getProjects";
+import UpcomingAndSoldProjects from "../components/UpcomingAndSoldProjects";
+import ActiveProjects from "../components/ActiveProjects";
 
 export default function Home({
   activeProjects,
@@ -34,70 +36,11 @@ export default function Home({
             Find active and upcoming NTFs to mint
           </h1>
         </div>
-        {activeProjects.length > 0 && (
-          <div className="space-y-1">
-            <p className="text-sm">Active</p>
-            <div className="space-y-3">
-              {activeProjects.map(
-                ({
-                  id,
-                  name,
-                  total_mint_size,
-                  mint_price,
-                  mint_date,
-                  link,
-                  discord_link,
-                  twitter_link,
-                  image,
-                }) => (
-                  <Project
-                    key={id}
-                    name={name}
-                    img={image}
-                    items={total_mint_size}
-                    price={mint_price}
-                    date={mint_date}
-                    website={link}
-                    communityLink={discord_link}
-                    twitter={twitter_link}
-                  />
-                )
-              )}
-            </div>
-          </div>
-        )}
-        {upcomingProjects.length > 0 && (
-          <div className="space-y-1">
-            <p className="text-sm">Upcoming</p>
-            <div className="space-y-3">
-              {upcomingProjects.map(
-                ({
-                  id,
-                  name,
-                  total_mint_size,
-                  mint_price,
-                  mint_date,
-                  link,
-                  discord_link,
-                  twitter_link,
-                  image,
-                }) => (
-                  <Project
-                    key={id}
-                    name={name}
-                    img={image}
-                    items={total_mint_size}
-                    price={mint_price}
-                    date={mint_date}
-                    website={link}
-                    communityLink={discord_link}
-                    twitter={twitter_link}
-                  />
-                )
-              )}
-            </div>
-          </div>
-        )}
+        <ActiveProjects activeProjects={activeProjects} />
+        <UpcomingAndSoldProjects
+          upcomingProjects={upcomingProjects}
+          soldOutProjects={soldOutProjects}
+        />
       </div>
     </div>
   );
