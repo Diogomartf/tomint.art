@@ -2,7 +2,7 @@ import Project from "../components/project";
 
 export default function ActiveProjects({ activeProjects }) {
   return (
-    <div className="space-y-1 my-4">
+    <div className="my-4 space-y-1">
       <p className="text-sm">Active</p>
       {activeProjects.length > 0 && (
         <div className="space-y-3">

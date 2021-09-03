@@ -24,7 +24,9 @@ const Project = ({
         />
       )}
       <div className="flex flex-col justify-between">
-        <h3 className="font-bold md:text-xl">{name}</h3>
+        <a href={website} rel="noreferrer" target="_blank">
+          <h3 className="font-bold md:text-xl hover:underline">{name}</h3>
+        </a>
         <div className="flex space-x-5 md:space-x-8">
           <Detail title="price">
             <div className="flex items-center">
@@ -32,7 +34,7 @@ const Project = ({
               {price}
             </div>
           </Detail>
-          <Detail title="items">{items}K</Detail>
+          <Detail title="items">{items}</Detail>
           <Detail title="date">{date}</Detail>
         </div>
       </div>

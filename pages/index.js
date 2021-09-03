@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Navbar from "../components/navbar";
-import Project from "../components/project";
 import {
   getActiveProjects,
   getUpcomingProjects,
@@ -20,7 +19,7 @@ export default function Home({
         <title>NFTs to mint | Tomint.art</title>
         <meta
           name="description"
-          content="Find active and upcoming NTFs to mint."
+          content="NTFs to mint. Find active and upcoming project at mint stage."
         />
         <link rel="icon" href="/favicon/favicon.ico" />
         <link
@@ -56,10 +55,13 @@ export default function Home({
       />
       <div className="z-10 px-4 mx-auto lg:px-0 md:max-w-5xl">
         <Navbar></Navbar>
-        <div className="py-12 md:py-24">
-          <h1 className="max-w-3xl text-3xl font-bold leading-tight md:text-6xl">
-            Find active and upcoming NTFs to mint
+        <div className="max-w-3xl py-12 space-y-1 text-xl md:space-y-3 md:py-24">
+          <h1 className="text-3xl font-bold leading-tight md:text-6xl">
+            Never miss a mint.
           </h1>
+          <h2 className="text-sm text-gray-600 md:text-xl">
+            Active and Upcoming NFTs at mint stage.
+          </h2>
         </div>
         <ActiveProjects activeProjects={activeProjects} />
         <UpcomingAndSoldProjects
