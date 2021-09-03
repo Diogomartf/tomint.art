@@ -51,7 +51,7 @@ export const getActiveProjects = () => {
       .select({
         fields,
         filterByFormula:
-          "AND(NOT({approval} = 0), IS_BEFORE({mint_date}, TODAY()), {current_mint_size} > 0)",
+          "AND(NOT({approval} = 0), OR(IS_BEFORE({mint_date}, TODAY()), IS_SAME({mint_date}, TODAY())), {current_mint_size} > 0)",
       })
       .eachPage(
         function page(records, fetchNextPage) {
@@ -101,7 +101,7 @@ export const getSoldOutProjects = () => {
       .select({
         fields,
         filterByFormula:
-          "AND(NOT({approval} = 0), IS_BEFORE({mint_date}, TODAY()), {current_mint_size} = 0)",
+          "AND(NOT({approval} = 0), OR(IS_BEFORE({mint_date}, TODAY()), IS_SAME({mint_date}, TODAY())), {current_mint_size} = 0)",
       })
       .eachPage(
         function page(records, fetchNextPage) {
