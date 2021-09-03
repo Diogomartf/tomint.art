@@ -7,6 +7,7 @@ import {
 } from "../airtable/getProjects";
 import UpcomingAndSoldProjects from "../components/UpcomingAndSoldProjects";
 import ActiveProjects from "../components/ActiveProjects";
+import ListYourNFTButton from "../components/ListYourNFTButton";
 
 export default function Home({
   activeProjects,
@@ -68,6 +69,9 @@ export default function Home({
           upcomingProjects={upcomingProjects}
           soldOutProjects={soldOutProjects}
         />
+        <div className="mt-12 md:hidden">
+          <ListYourNFTButton />
+        </div>
       </div>
     </div>
   );
