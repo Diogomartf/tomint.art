@@ -10,8 +10,6 @@ const fields = [
   "total_mint_size",
   "mint_price",
   "mint_date",
-  "mint_date",
-  "mint_date",
   "discord_link",
   "twitter_link",
   "images",
