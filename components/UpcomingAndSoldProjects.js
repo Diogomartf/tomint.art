@@ -8,7 +8,7 @@ export default function UpcomingAndSoldProjects({
   const [filter, setFilter] = useState("upcoming");
 
   return (
-    <div className="space-y-1 my-4">
+    <div className="space-y-3 my-4">
       <div className="flex divide-x divide-black">
         <p
           className={`text-sm pr-5 cursor-pointer hover:text-gray-600 ${
@@ -27,7 +27,7 @@ export default function UpcomingAndSoldProjects({
           Sold out
         </p>
       </div>
-      {filter === "upcoming" && upcomingProjects.length == 0 && (
+      {filter === "upcoming" && upcomingProjects.length > 0 && (
         <div className="space-y-3">
           {upcomingProjects.map(
             ({
@@ -56,7 +56,7 @@ export default function UpcomingAndSoldProjects({
           )}
         </div>
       )}
-      {filter === "sold" && soldOutProjects.length == 0 && (
+      {filter === "sold" && soldOutProjects.length > 0 && (
         <div className="space-y-3">
           {soldOutProjects.map(
             ({
