@@ -16,7 +16,7 @@ const Project = ({
     <div className="flex space-x-6">
       {img && (
         <Image
-          className="bg-gray-200 rounded-lg"
+          className="bg-gray-200 rounded-lg object-contain"
           src={img}
           alt={name}
           width={84}
@@ -35,7 +35,7 @@ const Project = ({
             </div>
           </Detail>
           <Detail title="items">{items}</Detail>
-          <Detail title="date">{date}</Detail>
+          <Detail title="date">{date ? date : "TBD"}</Detail>
         </div>
       </div>
     </div>
