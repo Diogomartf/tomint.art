@@ -17,10 +17,10 @@ export default function Home({
   return (
     <div className="relative">
       <Head>
-        <title>NFTs to mint | Tomint.art</title>
+        <title>NFTs at mint stage | Tomint.art</title>
         <meta
           name="description"
-          content="NTFs to mint. Find active and upcoming project at mint stage."
+          content="Never miss a mint. Find active and upcoming project at mint stage."
         />
         <link rel="icon" href="/favicon/favicon.ico" />
         <link
@@ -48,6 +48,35 @@ export default function Home({
         />
         <meta name="msapplication-TileColor" content="#00aba9" />
         <meta name="theme-color" content="#ffffff"></meta>
+        {/* Primary Meta Tags */}
+        <meta name="title" content="NFTs at mint stage" />
+        <meta
+          name="description"
+          content="Never miss a mint. Find active and upcoming project at mint stage."
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.tomint.art/" />
+        <meta property="og:title" content="NFTs at mint stage" />
+        <meta
+          property="og:description"
+          content="Never miss a mint. Find active and upcoming project at mint stage."
+        />
+        <meta property="og:image" content="https://www.tomint.art/meta.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.tomint.art/" />
+        <meta property="twitter:title" content="NFTs at mint stage" />
+        <meta
+          property="twitter:description"
+          content="Never miss a mint. Find active and upcoming project at mint stage."
+        />
+        <meta
+          property="twitter:image"
+          content="https://www.tomint.art/meta.png"
+        ></meta>
       </Head>
       <img
         className="absolute top-0 right-0 -z-10"
