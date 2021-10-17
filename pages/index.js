@@ -113,5 +113,6 @@ export async function getStaticProps() {
       upcomingProjects: await getUpcomingProjects(),
       soldOutProjects: await getSoldOutProjects(),
     },
+    revalidate: 3600,
   };
 }
